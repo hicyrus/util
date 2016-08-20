@@ -13,6 +13,6 @@ class Lib_HttpCurl {
 		//释放curl句柄
 		curl_close($ch);
 		//打印获取的数据
-		print_r($output);
+		return $output;
 	}
 }
