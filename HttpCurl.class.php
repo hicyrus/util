@@ -13,8 +13,14 @@ class Lib_HttpCurl {
                 curl_setopt($ch,CURLOPT_HEADER,0);
                 curl_setopt($ch,CURLOPT_HTTPHEADER,$header);
         }
+       
+        	
 		//执行并获取html文档内容
 		$output = curl_exec($ch);
+		if(curl_errno($ch)){
+        	curl_close($ch);
+        	return curl_errno($ch);
+        }
 		//释放curl句柄
 		curl_close($ch);
 		//打印获取的数据
@@ -37,8 +43,14 @@ class Lib_HttpCurl {
         curl_setopt($ch, CURLOPT_POST, 1);
         //post的变量
         curl_setopt($ch, CURLOPT_POSTFIELDS, $postData);
+
 		//执行并获取html文档内容
 		$output = curl_exec($ch);
+		if(curl_errno($ch)){
+        	curl_close($ch);
+        	return curl_errno($ch);
+        }
+
 		//释放curl句柄
 		curl_close($ch);
 		//打印获取的数据
