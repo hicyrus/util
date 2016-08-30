@@ -6,6 +6,4 @@ class Lib_Upload {
 	private $fileSize=0;
 	
 
-
-
 }

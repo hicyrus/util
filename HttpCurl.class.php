@@ -1,7 +1,7 @@
 <?php
 class Lib_HttpCurl {
 
-	public function get($url,$header=array()){
+	public function get($url,$header=array(),$cookie=array()){
 		//初始化
 		$ch = curl_init();
 		//设置选项,包括URL
@@ -27,7 +27,7 @@ class Lib_HttpCurl {
 		return $output;
 	}
 
-	public function post($url,$postData=array(),$header=array()){
+	public function post($url,$postData=array(),$header=array(),$cookie=array()){
 		//初始化
 		$ch = curl_init();
 		//设置选项,包括URL
@@ -56,4 +56,7 @@ class Lib_HttpCurl {
 		//打印获取的数据
 		return $output;
 	}
+
+
+
 }
